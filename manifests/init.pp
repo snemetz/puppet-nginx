@@ -55,9 +55,9 @@ class nginx (
     notify             => Class['nginx::service'],
   }
 
-  class { 'nginx::service': 
+  class { 'nginx::service':
     configtest_enable => $configtest_enable,
-    service_restart => $service_restart,
+    service_restart   => $service_restart,
   }
 
   # Allow the end user to establish relationships to the "main" class

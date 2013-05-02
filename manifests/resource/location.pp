@@ -12,7 +12,7 @@
 #                              with nginx::resource::upstream
 #   [*proxy_read_timeout*]   - Override the default the proxy read timeout value of 90 seconds
 #   [*ssl*]                  - Indicates whether to setup SSL bindings for this location.
-#   [*ssl_only*]	     - Required if the SSL and normal vHost have the same port.
+#   [*ssl_only*]             - Required if the SSL and normal vHost have the same port.
 #   [*location_alias*]       - Path to be used as basis for serving requests for this location
 #   [*stub_status*]          - If true it will point configure module stub_status to provide nginx stats on location
 #   [*location_cfg_prepend*] - It expects a hash with custom directives to put before anything else inside location

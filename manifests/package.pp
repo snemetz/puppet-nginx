@@ -31,7 +31,7 @@ class nginx::package {
       }
     }
     debian,ubuntu: {
-      class { 'nginx::package::debian': 
+      class { 'nginx::package::debian':
         require => Anchor['nginx::package::begin'],
         before  => Anchor['nginx::package::end'],
       }
