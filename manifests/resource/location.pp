@@ -48,6 +48,7 @@
 #  }
 
 define nginx::resource::location (
+  $location,
   $ensure               = present,
   $vhost                = undef,
   $www_root             = undef,
@@ -64,8 +65,8 @@ define nginx::resource::location (
   $stub_status          = undef,
   $location_cfg_prepend = undef,
   $location_cfg_append  = undef,
-  $try_files            = undef,
-  $location) {
+  $try_files            = undef
+) {
   File {
     owner  => 'root',
     group  => 'root',

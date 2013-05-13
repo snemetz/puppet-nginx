@@ -17,6 +17,7 @@ class nginx::config(
   $worker_processes    = $nginx::params::nx_worker_processes,
   $worker_connections  = $nginx::params::nx_worker_connections,
   $proxy_set_header    = $nginx::params::nx_proxy_set_header,
+  $proxy_http_version  = $nginx::params::nx_proxy_http_version,
   $confd_purge         = $nginx::params::nx_confd_purge,
   $server_tokens       = $nginx::params::nx_server_tokens
 ) inherits nginx::params {
@@ -35,8 +36,8 @@ class nginx::config(
   }
   if $confd_purge == true {
     File["${nginx::params::nx_conf_dir}/conf.d"] {
-      ignore => "vhost_autogen.conf",
-      purge => true,
+      ignore  => 'vhost_autogen.conf',
+      purge   => true,
       recurse => true,
     }
   }
@@ -46,8 +47,8 @@ class nginx::config(
   }
   if $confd_purge == true {
     File["${nginx::params::nx_conf_dir}/conf.mail.d"] {
-      ignore => "vhost_autogen.conf",
-      purge => true,
+      ignore  => 'vhost_autogen.conf',
+      purge   => true,
       recurse => true,
     }
   }
