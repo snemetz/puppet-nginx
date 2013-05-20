@@ -6,7 +6,7 @@ pid        <%= scope.lookupvar('nginx::params::nx_pid')%>;
 
 events {
   worker_connections <%= worker_connections %>;
-  <% if worker_processes > 1 %>accept_mutex on;<% end %>
+  <% if worker_processes.to_i > 1 %>accept_mutex on;<% end %>
   <% if scope.lookupvar('nginx::params::nx_multi_accept') == 'on' %>multi_accept on;<% end %>
   <% if scope.lookupvar('nginx::params::nx_events_use') %>use <%= scope.lookupvar('nginx::params::nx_events_use')%>;<% end %>
 }
