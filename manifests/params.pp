@@ -25,7 +25,8 @@ class nginx::params {
   $nx_events_use         = false # One of [kqueue|rtsig|epoll|/dev/poll|select|poll|eventport] or false to use OS default
   $nx_sendfile           = on
   $nx_keepalive_timeout  = 65
-  $nx_tcp_nodelay        = on
+  $nx_tcp_nodelay        = off
+  $nx_tcp_nopush         = on
   $nx_gzip               = on
   $nx_server_tokens      = on
   $nx_spdy               = off

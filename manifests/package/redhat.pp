@@ -28,11 +28,13 @@ class nginx::package::redhat {
     $os_rel = $::lsbmajdistrelease
   }
 
+  # TODO: create option to point to local mirror
   yumrepo { 'nginx-release':
     baseurl  => "http://nginx.org/packages/${os_type}/${os_rel}/\$basearch/",
     descr    => 'nginx repo',
     enabled  => '1',
     gpgcheck => '0',
+    priority => '1',
   }
 
   package { $redhat_packages:
